@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/b48da1d3df.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Recipe Book</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <button class="button-login" id="form-open">Login</button>
+            </div>
+        </div>
+
+    </nav>
+    <section class="home">
+
+
+        <video autoplay loop muted>
+            <source src="images/pasta-33256.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        <h1 class="slogan">World's Finest Recipe</h1>
+        <div class="form_container">
+            <i class="uil uil-times form_close"></i>
+            <!-- Login From -->
+            <div class="form login_form">
+                <form action="#">
+                    <h2>Login</h2>
+                    <div class="input_box">
+                        <input type="email" placeholder="Enter your email" required />
+                        <i class="uil uil-envelope-alt email"></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="password" placeholder="Enter your password" required />
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide"></i>
+                    </div>
+                    <div class="option_field">
+                        <span class="checkbox">
+                            <input type="checkbox" id="check" />
+                            <label for="check">Remember me</label>
+                        </span>
+                        <a href="#" class="forgot_pw">Forgot password?</a>
+                    </div>
+                    <button class="button" href="#">Login Now</button>
+                    <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
+                </form>
+            </div>
+            <!-- Signup From -->
+            <div class="form signup_form">
+                <form action="#">
+                    <h2>Signup</h2>
+                    <div class="input_box">
+                        <input type="email" placeholder="Enter your email" required />
+                        <i class="uil uil-envelope-alt email"></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="password" placeholder="Create password" required />
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide"></i>
+                    </div>
+                    <div class="input_box">
+                        <input type="password" placeholder="Confirm password" required />
+                        <i class="uil uil-lock password"></i>
+                        <i class="uil uil-eye-slash pw_hide"></i>
+                    </div>
+                    <button class="button">Signup Now</button>
+                    <div class="login_signup">Already have an account? <a href="#" id="login">Login</a></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="meal-wrapper">
+            <div class="meal-search">
+                <h2 class="title">Find a Recipe</h2>
+                <div class="meal-search-box">
+                    <input type="text" class="search-control" placeholder="Search a Recipe" id="search-input">
+                    <button type="submit" class="search-btn btn" id="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="meal-result">
+                <h2 class="title">Search Results:</h2>
+                <div id="meal">
+                    <!-- meal item -->
+                    <!-- <div class = "meal-item">
+            <div class = "meal-img">
+              <img src = "food.jpg" alt = "food">
+            </div>
+            <div class = "meal-name">
+              <h3>Potato Chips</h3>
+              <a href = "#" class = "recipe-btn">Get Recipe</a>
+            </div>
+          </div> -->
+                    <!-- end of meal item -->
+                </div>
+            </div>
+
+
+            <div class="meal-details">
+                <!-- recipe close btn -->
+                <button type="button" class="btn recipe-close-btn" id="recipe-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <!-- meal content -->
+                <div class="meal-details-content">
+                    <!-- <h2 class = "recipe-title">Meals Name Here</h2>
+          <p class = "recipe-category">Category Name</p>
+          <div class = "recipe-instruct">
+            <h3>Instructions:</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo blanditiis quis accusantium natus! Porro, reiciendis maiores molestiae distinctio veniam ratione ex provident ipsa, soluta suscipit quam eos velit autem iste!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet aliquam voluptatibus ad obcaecati magnam, esse numquam nisi ut adipisci in?</p>
+          </div>
+          <div class = "recipe-meal-img">
+            <img src = "food.jpg" alt = "">
+          </div>
+          <div class = "recipe-link">
+            <a href = "#" target = "_blank">Watch Video</a>
+          </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+
+        <div class="footer-container">
+            <div class="footer-updates">
+                <h5>NEWSLETTER</h5>
+                <p>Subscribe to our newsletter to get daily tips, recipes and trends.</p>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="example@gmail.com" aria-label="Enter email"
+                        aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-contain">
+                <ul>
+                    <li><a class="footer-name" href="https://www.themealdb.com/api.php">TheMealDB.com</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-contain">
+                <ul>
+                    <li><a class="footer-name" href="https://www.themealdb.com/api.php">Help & Support</a></li>
+                    <li><a href="">Support Center</a></li>
+                    <li><a href="">FAQ</a></li>
+                    <li><a href="">Call Center</a></li>
+                </ul>
+            </div>
+            <div class="footer-contain">
+                <ul>
+                    <li><a class="footer-name" href="https://www.themealdb.com/api.php">Contact</a></li>
+                    <li><a href="">mealdba@gmail.com</a></li>
+                    <li><a href="">987 Ayrroo Matbridgeta,
+                              Might Be Slippery Donkeys
+                        </a></li>
+                    <li><a href="">085763231</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <div class="copyright">
+            <p>&copy; Recipe Book 2023 - <a href="#" target="_blank">Privacy Policy | Terms</a></p>
+        </div>
+        <div class="social-media">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-tiktok"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="meal-wrapper">
+            <div class="meal-search">
+                <h2 class="title">
+                    Find a Recipe
+                </h2>
+                <blockquote>
+                    Real food doesn't ingredients, real food is right
+                    <cite>- Malou</cite>
+                </blockquote>
+                <div class="meal-search-box">
+                    <input type="text" class="search-control" placeholder="Search a recipe" id="search-input">
+                    <button type="submit" class="search-btn btn" id="search-btn">
+                        <i class="fas fa-search"></i>
+
+                    </button>
+                </div>
+            </div>
+            <div class="meal-result">
+                <h2 class="title">
+                    Search Results:
+                </h2>
+                 <div class="meal">
+                    <div class="meal-item">
+                        <div class="meal-img">
+                            <img src="images/slice-bioled-egg.webp" alt="slice-boiled-egg">
+                        </div>
+                        <div class="meal-name">
+                            <h3>Slice Boiled Egg</h3>
+                            <a href="#" class="recipe-btn">Learn Recipe</a>
+                        </div>
+                    </div>
+                   
+                </div> 
+ </div>
+            <div class="meal-details">
+                <button type="button" class="btn recipe-close-btn" id="recipe-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="meal-details-content">
+                    <h2 class="recipe-title">Recipe Here</h2>
+                    <p class="recipe-category">Category Name</p>
+                    <div class="recipe-instruct">
+                        <h3>How to prepare:</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ex iusto ipsam soluta quas
+                            laborum ipsa, cum quaerat itaque explicabo distinctio voluptatem mollitia architecto. Eum
+                            eveniet consectetur cupiditate iusto quasi!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias nesciunt odio eveniet neque
+                            ullam enim quidem mollitia numquam, quos quisquam excepturi ipsum ea provident, cupiditate
+                            placeat est beatae nulla omnis.</p>
+                    </div>
+                    <div class="recipe-meal-img">
+                        <img src="images/slice-bioled-egg.webp" alt="slice-boiled-egg">
+                    </div>
+                    <div class="recipe-link">
+                        <a href="#" target="_blank"> Watch the video</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html> -->
